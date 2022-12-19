@@ -34,6 +34,8 @@ web/modules/*.txt
 web/profiles/*.txt
 web/sites/*.txt
 web/themes/*.txt
+web/robots.txt
+web/README.md
 
 # Ignore sensitive information
 !web/sites/*/settings.*.php
