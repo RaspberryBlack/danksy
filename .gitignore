@@ -1,0 +1,59 @@
+# Ignore environment specific files.
+.htaccess
+*.env
+private-files
+web/sites/example*
+web/sites/default
+web/sites/*/files/*
+web/sites/default/settings.local.php
+web/sites/development.services.yml
+
+# Ignore composer/Drupal & Node generated files.
+.editorconfig
+.gitattributes
+vendor/
+node_modules
+drush/contrib/
+web/.*
+web/autoload.php
+web/core/
+web/example.gitignore
+web/index.php
+web/modules/contrib
+web/modules/local
+web/update.php
+web/web.config
+web/themes/
+web/profiles/contrib/
+web/libraries/
+
+# Ignore certain text files.
+web/INSTALL.txt
+web/README.txt
+web/modules/*.txt
+web/profiles/*.txt
+web/sites/*.txt
+web/themes/*.txt
+
+# Ignore sensitive information
+!web/sites/*/settings.*.php
+web/sites/*/settings.local.php
+*.sql
+.lando.yml
+
+# Ignore SimpleTest multi-site environment.
+web/sites/simpletest
+
+# Generated files
+RoboFile.php
+!.circleci/RoboFile.php
+robo.yml
+!.circleci/robo.yml
+web/simplesaml
+cghooks.lock
+
+# Generated files & Front end stuff
+node_modules
+.editorconfig
+.idea/
+.gitattributes
