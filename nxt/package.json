@@ -1,11 +1,11 @@
 {
-  "name": "basic-starter",
+  "name": "Danksy frontend",
   "version": "1.7.2",
   "private": true,
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export && next-export-optimize-images",
     "start": "next start",
     "preview": "next build && next start",
     "lint": "next lint"
@@ -14,6 +14,7 @@
     "@tailwindcss/typography": "^0.5.8",
     "drupal-jsonapi-params": "^2.1.0",
     "next": "^13",
+    "next-compose-plugins": "^2.2.1",
     "next-drupal": "^1.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -26,6 +27,7 @@
     "autoprefixer": "^10.4.13",
     "eslint": "^8.28.0",
     "eslint-config-next": "^13.0.6",
+    "next-export-optimize-images": "^2.0.0",
     "postcss": "^8.4.19",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.1",

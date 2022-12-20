@@ -16,6 +16,7 @@ export default function IndexPage({ node }) {
   return (
     <>
       <Header/>
+
       <Hero
         title={node.title}
         image={absoluteUrl(node.field_image[0].uri.url)}
@@ -45,8 +46,6 @@ export default function IndexPage({ node }) {
     </>
   )
 }
-
-
 
 export async function getStaticProps(context) {
   const params = new DrupalJsonApiParams()
