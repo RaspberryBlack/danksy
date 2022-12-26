@@ -47,6 +47,31 @@ ul, ol {
 }
 
 
+.contact-form {
+  @apply font-mono max-w-2xl;
+  display: flex;
+  width: 100%;
+  flex-flow: row wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+.contact-form label {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: baseline;
+  border-bottom-width: 2px;
+  min-width: 14rem;
+}
+.contact-form .label {
+  display: block;
+}
+.contact-form label input,
+.contact-form label textarea {
+  border-width: 0;
+  width: 100%;
+
+}
+
 /*
     Icon Spin
 */

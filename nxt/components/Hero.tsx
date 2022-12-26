@@ -1,22 +1,27 @@
-import {Shape} from "@components"
+import {Shape} from "@components";
+import Image from "next/image";
 
 export const Hero = ({title, image, tagline}) => {
   return (
     <section
       id="hero"
-      style={{backgroundImage: `linear-gradient(to right, rgba(255,255,255,.7), transparent 60%), url(${image})`}}
-      className="relative bg-cover bg-no-repeat bg-center-top h-[300px] sm:h-[50vh] lg:h-[60vh] flex items-center"
+      className="relative flex items-center h-[300px] sm:h-[50vh] lg:h-[60vh] bg-gradient-to-r from-white to-[rgba(255,255,255,.3)] md:from-[rgba(255,255,255,.7)]"
     >
 
-      {/*linear-gradient(to right, rgba(255, 255, 255, .7) 50%, transparent 100%), url("http://danksy.lndo.site/sites/default/files/2022-12/IMG-20221102-WA0003_0.jpg")*/}
+      <Image
+        fill
+        className="object-cover object-left-top -z-[1]"
+        src={image}
+        alt=""
+      />
+
       <div className="container -translate-y-10">
-        <div className="mt-8">
-          {/*sm:text-[45px] md:text-[55px]*/}
-          <h1 className="text-pink-600 text-[5rem] sm:text-[7rem] font-black leading-none">{title}</h1>
+        <div className="md:mt-8">
+          <h1 className="text-pink-600 text-[20vw] sm:text-[7rem] font-black leading-none">{title}</h1>
           {tagline && (
             <div
               dangerouslySetInnerHTML={{ __html: tagline }}
-              className="font-body font-bold text-gray-900 border-b-[20px] border-pink-600 tracking-1 w-max text-l sm:text-xl -mt-3 ml-2"
+              className="font-body font-bold text-gray-900 border-b-[15px] sm:border-b-[20px] border-pink-600 sm:tracking-1 w-max text-[4vw] sm:text-xl -mt-2 sm:-mt-3 ml-1 sm:ml-2"
             />
           )}
 

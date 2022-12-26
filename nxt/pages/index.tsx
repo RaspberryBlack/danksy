@@ -1,22 +1,30 @@
 import { GetStaticPropsResult } from "next"
 import { DrupalNode } from "next-drupal"
 import { drupal } from "lib/drupal"
-import {Hero, Header} from "@components";
+import {Hero, Header, ContactForm } from "@components";
 import Image from "next/image";
 import {absoluteUrl} from "@lib/utils";
-import * as FontAwesome from "react-icons/rx";
-import { RiInstagramFill } from "react-icons/ri";
+import {RiInstagramFill, RiMailFill, RiPhoneFill} from "react-icons/ri";
 import {DrupalJsonApiParams} from "drupal-jsonapi-params";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+
 
 interface IndexPageProps {
   nodes: DrupalNode
 }
 
 export default function IndexPage({ node }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    if(!router.isReady) return;
+    const query = router.query;
+  }, [router.isReady, router.query]);
+  console.log(router.query);
+
   return (
     <>
-      <Header/>
-
       <Hero
         title={node.title}
         image={absoluteUrl(node.field_image[0].uri.url)}
@@ -29,20 +37,33 @@ export default function IndexPage({ node }) {
           alt=""
           width="500"
           height="500"
-          className="relative block float-right w-[50%] sm:w-[30%] h-auto -top-20 ml-2 md:ml-20 rotate-6 border-8 border-white"
+          className="relative block float-right min-w-[10rem] w-1/3 max-w-[20rem] h-auto -top-[8rem] md:-top-20 -mb-28 md:-mb-16 ml-[100%] sm:ml-2 md:ml-20 rotate-6 border-8 border-white drop-shadow"
         />
         {node.body?.processed && (
-          <p
+          <div
             dangerouslySetInnerHTML={{ __html: node.body?.processed }}
             className="mt-4"
           />
         )}
+        <br/>
+        <p>
+          <RiInstagramFill className="inline-block mr-4" />
+          <a href="https://www.instagram.com/danksy87">danksy87</a><br/>
+
+          <RiMailFill className="inline-block mr-4" />
+          <a href="mailto:&#100;&#097;&#110;&#105;&#097;&#108;&#098;&#114;&#097;&#100;&#102;&#111;&#114;&#100;&#064;&#105;&#099;&#108;&#111;&#117;&#100;&#046;&#099;&#111;&#109;">
+            danialbradford<span style={{display:'none'}}>foo</span>@icloud.com
+          </a><br/>
+
+          <RiPhoneFill className="inline-block mr-4" />
+          0484<span style={{display:'none'}}>bar</span> 128 161<br/>
+        </p>
+
+
       </div>
 
+      {/*<div className="container"><ContactForm/></div>*/}
 
-      {/*<div className="mt-3">*/}
-      {/*  <RiInstagramFill className="w-12 h-12" />*/}
-      {/*</div>*/}
     </>
   )
 }
