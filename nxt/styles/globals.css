@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?Archivo+Narrow&family=Archivo:wght@400;700;900&family=Merriweather+Sans:ital,wght@0,300;0,500;1,300&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,10 +8,39 @@
   .animation-delay-2000 {
     animation-delay: 2000ms;
   }
+  .word-spacing-wide {
+    word-spacing: .125em;
+  }
+  .clip-shape {
+    clip-path: url(#shape);
+  }
+}
+
+@layer components {
+  .btn {
+    @apply bg-pink-600 text-white font-bold px-6 py-2 tracking-wide rounded-full   flex items-center content-center hover:bg-pink-700;
+  }
+  .sleeve {
+    @apply relative after:content-[''] after:absolute after:w-full after:h-full after:top-0 after:left-0
+  }
+  .prose a {
+    @apply decoration-pink-600 decoration-1 underline-offset-2 hover:decoration-pink-400
+  }
+}
+
+:root {
+  color-scheme: light;
+  @apply bg-slate-800;
 }
 
 body {
   @apply font-body text-body font-light leading-loose;
+  word-break: break-word;
+}
+
+main {
+  @apply relative z-[10];
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 p:not(:last-child) {
@@ -17,8 +48,7 @@ p:not(:last-child) {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  @apply text-dark;
-  @apply font-heading;
+  @apply font-heading font-bold leading-none mb-4;
 }
 
 h1 { @apply text-3xl }
@@ -30,47 +60,46 @@ ul, ol {
   @apply p-0 m-0 list-none;
 }
 
-/*
-    Container
- */
 .container {
-  @apply sm:max-w-[540px] md:max-w-[720px] lg:max-w-[960px] xl:max-w-[1140px]
+  @apply max-w-[75rem] px-8 mx-auto;
+}
+.container-wide {
+  @apply max-w-[100rem] px-8 mx-auto;
 }
 
 /*
     Navbar
 */
-
 .nav li a:hover span {
   transform: translate3d(0, -12px, 0);
   @apply opacity-0;
 }
 
 
-.contact-form {
-  @apply font-mono max-w-2xl;
-  display: flex;
-  width: 100%;
-  flex-flow: row wrap;
-  gap: 2rem;
-  justify-content: space-between;
-}
-.contact-form label {
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: baseline;
-  border-bottom-width: 2px;
-  min-width: 14rem;
-}
-.contact-form .label {
-  display: block;
-}
-.contact-form label input,
-.contact-form label textarea {
-  border-width: 0;
-  width: 100%;
+/*.contact-form {*/
+/*  @apply font-mono max-w-2xl;*/
+/*  display: flex;*/
+/*  width: 100%;*/
+/*  flex-flow: row wrap;*/
+/*  gap: 2rem;*/
+/*  justify-content: space-between;*/
+/*}*/
+/*.contact-form label {*/
+/*  margin-bottom: 1rem;*/
+/*  display: flex;*/
+/*  align-items: baseline;*/
+/*  border-bottom-width: 2px;*/
+/*  min-width: 14rem;*/
+/*}*/
+/*.contact-form .label {*/
+/*  display: block;*/
+/*}*/
+/*.contact-form label input,*/
+/*.contact-form label textarea {*/
+/*  border-width: 0;*/
+/*  width: 100%;*/
 
-}
+/*}*/
 
 /*
     Icon Spin

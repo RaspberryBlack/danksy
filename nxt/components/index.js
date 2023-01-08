@@ -1,5 +1,12 @@
 export * from './Shape'
 export * from './Header'
 export * from './Hero'
+export * from './GalleryBlock'
+export * from './GallerySet'
+export * from './Thumbnail'
+export * from './Logo'
+export * from './Contact'
+export * from './Footer'
+export * from './MenuLinks'
 export * from './ContactForm'
 

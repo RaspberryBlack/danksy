@@ -1,15 +1,12 @@
-import Link from "next/link"
+import {Footer} from "@components";
 
-import { PreviewAlert } from "components/preview-alert"
-
-export function Layout({ children }) {
+export function Layout({children }) {
   return (
     <>
-      <PreviewAlert />
-        <header>
-
-        </header>
-        <main>{children}</main>
+      {/*<PreviewAlert />*/}
+      <a id="top" />
+      {children}
+      <Footer />
     </>
   )
 }

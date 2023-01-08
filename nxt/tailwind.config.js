@@ -1,18 +1,3 @@
-// module.exports = {
-//   mode: "jit",
-//   content: [
-//     "./pages/**/*.{js,ts,jsx,tsx}",
-//     "./components/**/*.{js,ts,jsx,tsx}",
-//   ],
-//   theme: {
-//     extend: {},
-//   },
-//   variants: {
-//     extend: {},
-//   },
-//   plugins: [require("@tailwindcss/typography")],
-// }
-
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -21,11 +6,14 @@ module.exports = {
   theme: {
     screens: {
       'sm': '576px',
+      '-sm': {'max': '575px'},
       'md': '768px',
+      '-md': {'max': '767px'},
       'lg': '992px',
-      'xl': '1200px'
+      '-lg': {'max': '991px'},
+      'xl': '1200px',
+      '-xl': {'max': '1199px'},
     },
-
     extend: {
       colors: {
         body: "#333333",
@@ -58,13 +46,6 @@ module.exports = {
       letterSpacing: {
         "1": "1px"
       },
-      lineHeight: {
-        0: "0"
-      },
-      dropShadow: {
-        "thumb": "0px 0px 21px rgb(0 0 0 / 30%)",
-        "portfolio": "0px 10px 27px rgb(0 0 0 / 10%)",
-      },
       boxShadow: {
         "scroll-top": "0px -2px 9.9px 0.1px rgb(186 187 188 / 25%)"
       },
@@ -73,7 +54,7 @@ module.exports = {
       },
       transitionProperty: {
         "height": "height",
-        "spacing": "margin, padding"
+        "spacing": "margin, padding",
       },
       height: {
         unset: "unset"
@@ -101,6 +82,6 @@ module.exports = {
   },
   plugins: [
     require("@tailwindcss/typography"),
-    require('@tailwindcss/forms'),
+    require('@tailwindcss/forms')
   ],
 }

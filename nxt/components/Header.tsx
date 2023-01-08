@@ -3,19 +3,34 @@
 //import MobileNavbar from "./MobileNavbar";
 //import { Divide as Hamburger } from 'hamburger-react';
 import useScrollPosition from "../hooks/useScrollPosition";
+import reactStringReplace from 'react-string-replace';
+import {absoluteUrl} from "@lib/utils";
+import Image from "next/image";
+import Link from "next/link";
+import {Logo} from "./Logo";
 
-
-export const Header = () => {
+export const Header = ({ image, title }) => {
   const {position} = useScrollPosition();
+  // Replace spaces with nbsp and slash+space with space.
+  title = title.replace(/ (?!\|)/gi, '\u00A0').replace(/ \|/gi, ' ');
 
   return (
-    <header className={`fixed left-0 top-0 w-full z-30 duration-400 ${position >= 200 ? "py-2" : "py-2 md:py-5"}`}>
+    <header className="relative w-full pt-4 h-32 md:h-60 -mb-[0.2rem] md:-mb-[0.35rem]">
+
+      <Image
+        className="fixed w-full top-0 left-0 opacity-20 -z-[1]"
+        src={absoluteUrl(image.uri.url)}
+        width={image.resourceIdObjMeta.width}
+        height={image.resourceIdObjMeta.height}
+        alt=""
+      />
 
       <div className="container">
-        <div className="sm:flex items-center justify-between">
+        <h1 className="absolute text-white text-xl word-spacing-wide md:text-6xl top-full -translate-y-full">{title}</h1>
+
+        <div className="sm:flex">
           <div className="flex items-center justify-between">
-            {/* Logo */}
-            {/*Danksy*/}
+            <Logo />
 
             {/* Mobile Menu Icon */}
             {/*<span className="sm:hidden">*/}

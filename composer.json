@@ -10,6 +10,19 @@
     },
     "repositories": [
         {
+            "type": "package",
+            "package": {
+                "name": "drupal/imageapi_optimize_binaries",
+                "type": "drupal-module",
+                "version": "dev-8.x-1.x",
+                "source": {
+                    "type": "git",
+                    "url": "https://git.drupalcode.org/project/imageapi_optimize_binaries.git",
+                    "reference": "da90b4d0b5fad656b2dce400a882345eeac87757"
+                }
+            }
+        },
+        {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
         }
@@ -18,12 +31,21 @@
         "composer/installers": "^2.0",
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.3",
+        "drupal/consumer_image_styles": "^4.0",
+        "drupal/consumers": "^1.16",
         "drupal/core-composer-scaffold": "^10.0",
         "drupal/core-project-message": "^10.0",
         "drupal/core-recommended": "^10.0",
+        "drupal/decoupled_router": "^2.0",
+        "drupal/devel_entity_updates": "^4.1",
+        "drupal/field_group": "^3.4",
+        "drupal/imageapi_optimize": "^4.0",
+        "drupal/imageapi_optimize_binaries": "dev-8.x-1.x",
+        "drupal/jsonapi_extras": "^3.23",
         "drupal/jsonapi_resources": "^1.0@beta",
-        "drupal/next": "^1.6",
+        "drupal/next": "1.0.x-dev@dev",
         "drupal/paragraphs": "^1.15",
+        "drupal/subrequests": "^3.0",
         "drush/drush": "^11.3"
     },
     "require-dev": {
@@ -87,6 +109,9 @@
             },
             "drupal/decoupled_router": {
                 "Unable to resolve path on node in other language than default": "https://www.drupal.org/files/issues/2022-12-01/decouple_router-3111456-resolve-language-issue-58--get-translation.patch"
+            },
+            "drupal/imageapi_optimize_binaries": {
+                "Automated Drupal 10 compatibility fixes": "https://www.drupal.org/files/issues/2022-07-23/imageapi_optimize_binaries.1.x-dev.rector.patch"
             }
         }
     }
