@@ -1,0 +1,16 @@
+/*
+ * Skypack CDN - hamburger-react@2.5.0
+ *
+ * Learn more:
+ *   📙 Package Documentation: https://www.skypack.dev/view/hamburger-react
+ *   📘 Skypack Documentation: https://www.skypack.dev/docs
+ *
+ * Pinned URL: (Optimized for Production)
+ *   ▶️ Normal: https://cdn.skypack.dev/pin/hamburger-react@v2.5.0-aZXCxLadXEQF8I3yY0hp/mode=imports/optimized/hamburger-react.js
+ *   ⏩ Minified: https://cdn.skypack.dev/pin/hamburger-react@v2.5.0-aZXCxLadXEQF8I3yY0hp/mode=imports,min/optimized/hamburger-react.js
+ *
+ */
+
+// Browser-Optimized Imports (Don't directly import the URLs below in your application!)
+export * from '/-/hamburger-react@v2.5.0-aZXCxLadXEQF8I3yY0hp/dist=es2019,mode=imports/optimized/hamburger-react.js';
+export {default} from '/-/hamburger-react@v2.5.0-aZXCxLadXEQF8I3yY0hp/dist=es2019,mode=imports/optimized/hamburger-react.js';

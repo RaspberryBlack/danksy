@@ -2,27 +2,29 @@ import artworks from "data/artwork.json";
 import {Header} from "@components";
 import Image from "next/image";
 import Link from "next/link";
+import {absoluteUrl, formatTitle} from "@lib/utils";
 
 export default function Page({ nodes, node }) {
   return (
     <>
-      <Header image={nodes[0].field_image[0]} title={node.title} />
+      <Header image={nodes[0].field_image[0] || nodes[0].field_image} title={node.title} />
       <main className="bg-white">
-        <div className="container-wide md:grid grid-cols-3 gap-2 md:gap-8 py-6">
+        <div className="md:container-wide px-8 grid sm:grid-cols-repeat gap-6 md:gap-12 py-6 md:py-12">
           {artworks.map(item => {
-            const title = item.title.replace(/ (?!\|)/gi, '\u00A0').replace(/ \|/gi, ' ');
+            const image = item.field_image[0] || item.field_image;
+
             return (
-              item.field_image && (
+              image && (
                 <Link key={item.id} href={item.path.alias}
-                      className="group relative block overflow-hidden h-full md:min-w-[10rem] max-w-[40rem] -md:mb-8">
+                      className="group relative block overflow-hidden h-full -md:mb-8">
 
                   <figure className="sleeve">
                     <Image
                       className="object-cover w-full h-full aspect-square"
-                      src={item.field_image[0].links.large.href}
+                      src={absoluteUrl(image.uri.url)}
                       width={500}
                       height={500}
-                      alt={item.field_image[0].resourceIdObjMeta.alt}
+                      alt={image.resourceIdObjMeta.alt}
                     />
                   </figure>
 
@@ -31,7 +33,7 @@ export default function Page({ nodes, node }) {
                       // className="absolute top-full md:group-hover:translate-y-[calc(-100%_-_1rem)] transition-transform left-4 px-4 py-2 mr-4 font-body text-white text-base font-light leading-8 bg-opacity-60 bg-black z-[1]"
                       className="text-base my-0"
                     >
-                    {title}</h2>
+                    {formatTitle(item.title)}</h2>
 
                     <div className="flex justify-between">
                       {item.field_width && (

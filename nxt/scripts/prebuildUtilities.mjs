@@ -13,8 +13,8 @@ const drupal = new DrupalClient(process.env.NEXT_PUBLIC_DRUPAL_BASE_URL, {
 export const preBuildDevelopment = async() => {
   const params = new DrupalJsonApiParams()
     .addFilter("status", "1")
-    .addInclude(["field_image","field_type","field_set"])
-    .addFields("node--artwork", ["title","body","field_image","path","created","promote","field_type","field_width","field_height","field_depth","field_price","field_material","field_set"])
+    .addInclude(["field_image","field_type","field_set,field_media,field_media.field_media_image"])
+    .addFields("node--artwork", ["title","body","field_image","field_media","path","created","promote","field_type","field_width","field_height","field_depth","field_price","field_material","field_set"])
     .addFields("file--file", ["id", "uri", "resourceIdObjMeta","links","created"])
     .addFields("taxonomy_term--type", ["name"])
     .addFields("taxonomy_term--set", ["name"])

@@ -1,9 +1,9 @@
 import { GetStaticPropsResult } from "next"
 import { DrupalNode } from "next-drupal"
-import { drupal } from "lib/drupal"
 import {Hero, GalleryBlock, Shape, Contact} from "@components";
 import Image from "next/image";
 import {absoluteUrl} from "@lib/utils";
+import { drupal } from "@lib/drupal"
 import {DrupalJsonApiParams} from "drupal-jsonapi-params";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
@@ -28,7 +28,7 @@ export default function IndexPage({ node }) {
       <header>
         <Hero
           title={node.title}
-          image={absoluteUrl(node.field_image[0].uri.url)}
+          image={absoluteUrl(node.field_image.uri.url)}
           tagline={node.body?.summary}
         />
       </header>
@@ -37,6 +37,14 @@ export default function IndexPage({ node }) {
         <Shape className="bottom-full -mb-1" fillColor={undefined}/>
 
         <GalleryBlock />
+
+        {/*bg-gradient-to-r from-pink-700 to-[#4A00E0]*/}
+        {/*<div className="bg-lime-100 px-8 ">*/}
+        {/*  <blockquote className="prose prose-2xl quote max-w-[45rem] mx-auto text-center">*/}
+        {/*    Go out in the world and ███ it up beautifully... Horrify us with new ideas. Outrage outdated critics. Use technology for transgression, not lazy social living. Make me nervous!<br />*/}
+        {/*    <cite>John Waters</cite>*/}
+        {/*  </blockquote>*/}
+        {/*</div>*/}
 
         <div className="bg-slate-700">
           <div className="container text-white sm:grid grid-cols-2 gap-8">
@@ -51,7 +59,7 @@ export default function IndexPage({ node }) {
             <figure className="sleeve -sm:-mx-8 -xl:-mr-8 overflow-hidden min-h-[20rem]">
               <Image
                 fill
-                src={absoluteUrl(node.field_image[1].uri.url)}
+                src="http://danksy.lndo.site/sites/default/files/2023-01/profile.jpeg"
                 alt=""
                 className="object-cover object-top sm:object-center lg:object-contain lg:object-right"
                 // className="relative block float-right min-w-[10rem] w-1/3 max-w-[20rem] h-auto -top-[8rem] md:-top-20 -mb-28 md:-mb-16 ml-[100%] sm:ml-2 md:ml-20 rotate-6 border-8 border-white drop-shadow"

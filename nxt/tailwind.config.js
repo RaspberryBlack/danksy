@@ -24,8 +24,8 @@ module.exports = {
         dark: "#202020"
       },
       fontFamily: {
-        body: ['"Merriweather Sans"', 'sans-serif'],
-        heading: ['"Archivo"', 'sans-serif']
+        body: ['var(--font-merriweather)', 'sans-serif'],
+        heading: ['var(--font-archivo)', 'sans-serif']
       },
       fontSize: {
         sm: '0.8rem',
@@ -40,6 +40,9 @@ module.exports = {
         center: true,
         padding: "1rem"
       },
+      gridTemplateColumns: {
+        repeat: "repeat(auto-fit,minmax(var(--min, 15rem),1fr))"
+      },
       backgroundPosition: {
         "center-top": "50% 0px"
       },
@@ -48,6 +51,12 @@ module.exports = {
       },
       boxShadow: {
         "scroll-top": "0px -2px 9.9px 0.1px rgb(186 187 188 / 25%)"
+      },
+      borderWidth: {
+        1: "1px"
+      },
+      transformStyle: {
+        "none": "none"
       },
       transitionDuration: {
         "400": "0.4s"

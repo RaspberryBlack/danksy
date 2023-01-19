@@ -1,0 +1,7 @@
+{
+  "https://cdn.skypack.dev/-/hamburger-react@v2.5.0-aZXCxLadXEQF8I3yY0hp/dist=es2019,mode=imports/optimized/hamburger-react.js": { "integrity": "sha512-8ztp1DSkiLpk/dOe4GixciTc3eRdwlDNLVjak3aqwqMxlQmoN6ifxjqQ+CtBIlTTZvnVYYG7JLsXMy+exQ8vVw==", "contentType": "application/javascript; charset=utf-8" },
+  "https://cdn.skypack.dev/-/object-assign@v4.1.1-LbCnB3r2y2yFmhmiCfPn/dist=es2019,mode=imports/optimized/object-assign.js": { "integrity": "sha512-PDkEgBVEnNNtSmSlVHUOX1hnHnL+VTaoQWg8t78RcCInNwWJQ7V0ollT+M7HScHq1BukvJxGluC0UZMOthyKtw==", "contentType": "application/javascript; charset=utf-8" },
+  "https://cdn.skypack.dev/-/react@v17.0.1-yH0aYV1FOvoIPeKBbHxg/dist=es2019,mode=imports/optimized/react.js": { "integrity": "sha512-Oe0vHmrMutaQNX76TDeyAJPYltX3aiC5m6hCofxIb8t5AuXWr5Z7W0cz+9yy+44K09z+JIpe8E+M9UTwTQ5Khg==", "contentType": "application/javascript; charset=utf-8" },
+  "https://cdn.skypack.dev/hamburger-react": { "integrity": "sha512-px0OxoIKfdCqtnr2bKcB36Z4m53MQroKjnSjIvdohFni5eWQ/b84FfOZ255y9+1s53Tz2Ij6lmDjM0gTKW1WtQ==", "contentType": "application/javascript; charset=utf-8" },
+  "version": 1
+}

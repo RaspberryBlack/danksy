@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?Archivo+Narrow&family=Archivo:wght@400;700;900&family=Merriweather+Sans:ital,wght@0,300;0,500;1,300&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,9 +12,31 @@
   .clip-shape {
     clip-path: url(#shape);
   }
+  .text-shadow {
+    text-shadow: 0 0px 1px rgba(0,0,0, .75);
+  }
 }
 
 @layer components {
+  .container {
+    @apply max-w-[75rem] px-8 mx-auto;
+  }
+  .container-wide {
+    @apply max-w-[100rem] px-2 md:px-8 mx-auto;
+  }
+  .grid-cols-repeat {
+    --min: 15rem;
+  }
+  @media (min-width: 768px) {
+    .grid-cols-repeat {
+      --min: 19rem;
+    }
+  }
+  @media (min-width: 1300px) {
+    .grid-cols-repeat {
+      --min: 22rem;
+    }
+  }
   .btn {
     @apply bg-pink-600 text-white font-bold px-6 py-2 tracking-wide rounded-full   flex items-center content-center hover:bg-pink-700;
   }
@@ -26,6 +46,31 @@
   .prose a {
     @apply decoration-pink-600 decoration-1 underline-offset-2 hover:decoration-pink-400
   }
+  .quote {
+    @apply block relative py-12;
+    line-height: 1.5;
+  }
+  .quote:before {
+    content:'“';
+    display: block;
+    position: absolute;
+    top: .5rem;
+    left: -3rem;
+    font-size: 14rem;
+    color: inherit;
+    opacity: .3;
+    font-weight: 400;
+    line-height: 1;
+  }
+  .form-item-wrapper {
+    @apply block mb-4
+  }
+  .form-item-wrapper > span {
+    @apply sr-only;
+  }
+  .form-input {
+    @apply block w-full;
+  }
 }
 
 :root {
@@ -33,9 +78,14 @@
   @apply bg-slate-800;
 }
 
+html {
+  @apply min-w-[350px];
+}
+
 body {
   @apply font-body text-body font-light leading-loose;
   word-break: break-word;
+  font-display: swap;
 }
 
 main {
@@ -49,6 +99,7 @@ p:not(:last-child) {
 
 h1, h2, h3, h4, h5, h6 {
   @apply font-heading font-bold leading-none mb-4;
+  /*font-display:swap;*/
 }
 
 h1 { @apply text-3xl }
@@ -60,19 +111,67 @@ ul, ol {
   @apply p-0 m-0 list-none;
 }
 
-.container {
-  @apply max-w-[75rem] px-8 mx-auto;
-}
-.container-wide {
-  @apply max-w-[100rem] px-8 mx-auto;
-}
-
 /*
     Navbar
 */
 .nav li a:hover span {
   transform: translate3d(0, -12px, 0);
   @apply opacity-0;
+}
+
+/*
+    Carousel
+*/
+.carousel-root {
+  @apply flex -sm:flex-col -md:mb-8 gap-2
+}
+.carousel {
+  @apply w-auto
+}
+.carousel .thumbs-wrapper {
+  @apply m-0
+}
+.carousel .thumbs {
+  @apply flex sm:flex-col w-min gap-2 sm:!transform-none;
+}
+.carousel .thumb,
+.carousel .thumb.selected,
+.carousel .thumb:hover {
+  @apply p-0 border-1 mr-0 border-slate-300 opacity-75 transition-opacity;
+}
+.carousel .thumb.selected {
+  @apply border-slate-800;
+}
+.carousel .thumb:hover {
+  @apply opacity-100
+}
+.carousel .thumb:only-child,
+.carousel .dot:only-child,
+.carousel .control-arrow:before {
+  @apply hidden
+}
+.carousel .slide {
+  @apply flex justify-center border-1 border-slate-300 bg-slate-600
+}
+.carousel.carousel-slider .control-arrow {
+  @apply w-1/2 opacity-100 text-left;
+  font-size: 5rem;
+  background: none;
+  text-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+}
+.carousel.carousel-slider .control-arrow:hover {
+  background: none;
+  text-shadow: 0px 0px 10px rgba(0,0,0,0.8);
+}
+.carousel.carousel-slider .control-arrow:before {
+  content: '❮';
+  border: none
+}
+.carousel .control-next.control-arrow {
+  @apply text-right
+}
+.carousel .control-next.control-arrow:before {
+  content: '❯';
 }
 
 

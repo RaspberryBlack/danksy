@@ -14,7 +14,15 @@ export const GalleryBlock = () => {
       const hide = (thumbs.length > 2) ? '-lg:hidden':'';
       thumbs.push(
         <div key={item.id} className={`flex-auto aspect-square overflow-hidden first:col-span-2 first:row-span-2 ${hide}`}>
-          <Thumbnail key={item.id} item={item}/>
+          <Thumbnail key={item.id} item={item} sizes={thumbs.length===0 ?
+            `(max-width: 985px) 66vw,
+             (max-width: 1600px) 50vw
+             756px`
+            :
+            `(max-width: 985px) 33vw,
+             (max-width: 1600px) 25vw
+             366px`
+          }/>
         </div>
       );
     }
@@ -24,7 +32,7 @@ export const GalleryBlock = () => {
   return (
   <>
     <section className="container-wide mb-12">
-      <div className="grid grid-cols-3 lg:grid-cols-4 xl:flex flex-wrap xl:flex-nowrap justify-center gap-2 md:gap-6 mb-4 md:mb-6">
+      <div className="grid grid-cols-3 lg:grid-cols-4 justify-center gap-2 md:gap-6 mb-4 md:mb-6">
         {thumbs}
       </div>
 

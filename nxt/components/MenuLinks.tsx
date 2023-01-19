@@ -1,11 +1,23 @@
 import Link from "next/link";
 
-export const MenuLinks = () => {
+const MENU_LIST = [
+  { text: "Home", href: "/" },
+  { text: "Artworks", href: "/art" },
+  { text: "Contact", href: "#contact" },
+];
+
+export const MenuLinks = ({className, classNameLink}) => {
+
   return (
-    <ul>
-      <li><Link href="/">Home</Link></li>
-      <li><Link href="/art">Artworks</Link></li>
-      <li><Link href="#contact">Contact</Link></li>
+    <ul className={className}>
+      {MENU_LIST.map((item, index) => (
+        <li key={item.text} >
+          <Link href={item.href}
+                className={classNameLink}>
+            {item.text}
+          </Link>
+        </li>
+      ))}
     </ul>
   )
 }

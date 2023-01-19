@@ -41,6 +41,7 @@
         "drupal/field_group": "^3.4",
         "drupal/imageapi_optimize": "^4.0",
         "drupal/imageapi_optimize_binaries": "dev-8.x-1.x",
+        "drupal/inline_entity_form": "^1.0@RC",
         "drupal/jsonapi_extras": "^3.23",
         "drupal/jsonapi_resources": "^1.0@beta",
         "drupal/next": "1.0.x-dev@dev",
