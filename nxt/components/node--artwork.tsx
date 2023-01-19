@@ -62,8 +62,11 @@ export function NodeArtwork({ node, ...props }) {
             <p>Custom frames available.</p>
             <p>Please leave your name and email to enquire about this painting:</p>
             <form name="inquiry" method="POST" data-netlify="true">
-              {/*<input type="hidden" name="subject"*/}
-              {/*       value={`Inquiry for ${stripTitle(node.title)}`} />*/}
+              <input type="hidden" name="form-name"
+                     value="inquiry" />
+              <input type="hidden" name="subject"
+                     value={`Inquiry for ${stripTitle(node.title)}`} />
+
               <label className="form-item-wrapper">
                 <span>First Name: </span>
                 <input type="text" name="name" placeholder="First Name" className="form-input" required />
