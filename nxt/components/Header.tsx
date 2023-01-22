@@ -4,7 +4,7 @@ import {Navbar} from "@components";
 
 export const Header = ({ image, title }) => {
   return (
-    <header className="relative w-full pt-4 h-32 md:h-60 -mb-[0.2rem] md:-mb-[0.5rem]">
+    <header className="relative w-full pt-4 h-32 md:h-60 -mb-[0.1rem] md:-mb-[0.25rem]">
 
       <Image
         className="fixed w-full top-0 left-0 opacity-20 -z-[1]"

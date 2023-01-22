@@ -3,7 +3,7 @@ import {RiInstagramFill, RiMailFill, RiPhoneFill} from "react-icons/ri";
 
 export const Contact = () => (
   <>
-    <Link href="https://www.instagram.com/danksy87" className="block mb-2">
+    <Link href="https://www.instagram.com/danksy87" target="_blank" className="block mb-2">
       <RiInstagramFill className="inline-block mr-2" /> danksy87
     </Link>
 

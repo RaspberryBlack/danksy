@@ -37,7 +37,7 @@ export default function Page({ nodes, node }) {
 
                     <div className="flex justify-between">
                       {item.field_width && (
-                        <div>{item.field_width} x {item.field_height}</div>
+                        <div>{item.field_width/10}cm x {item.field_height/10}cm</div>
                       )}
 
                       {item.field_price && !item.field_sold && (
