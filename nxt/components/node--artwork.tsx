@@ -45,7 +45,14 @@ export function NodeArtwork({ node, ...props }) {
               <><b>Size: </b>{node.field_width/10}cm x {node.field_height/10}cm<br /></>
             )}
             <br />
-            <div><b>AUD {node.field_price || "$680"}</b></div>
+
+            {node.field_price && !node.field_sold && (
+              <div><b>AUD { node.field_price }</b></div>
+            )}
+
+            {node.field_sold && (
+              <div><b>Sold out</b></div>
+            )}
 
             {node.body?.processed && (
               <>
@@ -61,11 +68,16 @@ export function NodeArtwork({ node, ...props }) {
 
             <p>Custom frames available.</p>
             <p>Please leave your name and email to enquire about this painting:</p>
-            <form name="inquiry" method="POST" data-netlify="true">
+            <form name="inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
               <input type="hidden" name="form-name"
                      value="inquiry" />
               <input type="hidden" name="subject"
                      value={`Inquiry for ${stripTitle(node.title)}`} />
+              <p className="hidden">
+                <label>
+                  Don’t fill this out if you’re human: <input name="bot-field"/>
+                </label>
+              </p>
 
               <label className="form-item-wrapper">
                 <span>First Name: </span>

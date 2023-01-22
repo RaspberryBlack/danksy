@@ -40,9 +40,13 @@ export default function Page({ nodes, node }) {
                         <div>{item.field_width} x {item.field_height}</div>
                       )}
 
-                      {/*{item.field_price && (*/}
-                      <div>{item.field_price || "$680"}</div>
-                      {/*)}*/}
+                      {item.field_price && !item.field_sold && (
+                        <div><b>AUD { item.field_price }</b></div>
+                      )}
+
+                      {item.field_sold && (
+                        <div><b>Sold out</b></div>
+                      )}
                     </div>
 
                   </div>

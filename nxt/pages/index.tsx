@@ -51,8 +51,8 @@ export default function IndexPage({ node }) {
             {node.body?.processed && (
               <div className="py-8">
                 <div dangerouslySetInnerHTML={{ __html: node.body?.processed }} />
-                <br/>
-                <Contact />
+                {/*<br/>*/}
+                {/*<Contact />*/}
               </div>
             )}
 
