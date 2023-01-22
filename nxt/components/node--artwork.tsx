@@ -66,32 +66,37 @@ export function NodeArtwork({ node, ...props }) {
 
             <hr />
 
-            <p>Custom frames available.</p>
-            <p>Please leave your name and email to enquire about this painting:</p>
-            <form name="inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-              <input type="hidden" name="form-name"
-                     value="inquiry" />
-              <input type="hidden" name="subject"
-                     value={`Inquiry for ${stripTitle(node.title)}`} />
-              <p className="hidden">
-                <label>
-                  Don’t fill this out if you’re human: <input name="bot-field"/>
-                </label>
-              </p>
+            {!node.field_sold && (
+              <>
+                <p>Custom frames available.</p>
+                <p>Please leave your name and email to enquire about this painting:</p>
+                <form name="inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                  <input type="hidden" name="form-name"
+                         value="inquiry" />
+                  <input type="hidden" name="subject"
+                         value={`Inquiry for ${stripTitle(node.title)}`} />
+                  <p className="hidden">
+                    <label>
+                      Don’t fill this out if you’re human: <input name="bot-field"/>
+                    </label>
+                  </p>
 
-              <label className="form-item-wrapper">
-                <span>First Name: </span>
-                <input type="text" name="name" placeholder="First Name" className="form-input" required />
-              </label>
-              <label className="form-item-wrapper">
-                <span>Email: </span>
-                <input type="email" name="email" placeholder="Email" className="form-input" required />
-              </label>
-              <p>
-                <button type="submit" className="btn ml-auto flex w-max rounded-none">Enquire</button>
-              </p>
-            </form>
-            {/*<p className="text-sm">Your data won't be stored or sold.</p>*/}
+                  <label className="form-item-wrapper">
+                    <span>First Name: </span>
+                    <input type="text" name="name" placeholder="First Name" className="form-input" required />
+                  </label>
+                  <label className="form-item-wrapper">
+                    <span>Email: </span>
+                    <input type="email" name="email" placeholder="Email" className="form-input" required />
+                  </label>
+                  <p>
+                    <button type="submit" className="btn ml-auto flex w-max rounded-none">Enquire</button>
+                  </p>
+                </form>
+                {/*<p className="text-sm">Your data won't be stored or sold.</p>*/}
+              </>
+            )}
+
 
 
           </div>
