@@ -4,7 +4,7 @@ export function Layout({children }) {
   return (
     <>
       {/*<PreviewAlert />*/}
-      <a id="top" />
+      <span id="top" />
       {children}
       <Footer />
     </>
