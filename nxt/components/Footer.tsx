@@ -23,7 +23,7 @@ export const Footer = () => {
 
         <div className="mt-10 md:mt-4">
           <h5 className="text-base">menu</h5>
-          <MenuLinks className="" classNameLink="" />
+          <MenuLinks className="" classNameLink="block my-2" />
         </div>
 
       </div>

@@ -12,13 +12,14 @@ export default function Page({ nodes, node }) {
         <div className="md:container-wide px-8 grid sm:grid-cols-repeat gap-6 md:gap-12 py-6 md:py-12">
           {artworks.map(item => {
             const image = item.field_image[0] || item.field_image;
+            const soldTag = item.field_sold ? "before:content-['sold'] before:absolute before:uppercase before:text-sm before:right-4 before:top-4 before:bg-pink-600 before:block before:px-2 before:text-white before:tracking-wide before:z-[1]" : "";
 
             return (
               image && (
                 <Link key={item.id} href={item.path.alias}
                       className="group relative block overflow-hidden h-full -md:mb-8">
 
-                  <figure className="sleeve">
+                  <figure className={`sleeve ${soldTag}`}>
                     <Image
                       className="object-cover w-full h-full aspect-square"
                       src={absoluteUrl(image.uri.url)}
