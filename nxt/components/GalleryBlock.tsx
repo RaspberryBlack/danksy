@@ -11,10 +11,13 @@ export const GalleryBlock = () => {
     const item = artworks[i]
 
     if(item.promote === true && item.field_type.name === "Painting") {
+      const first = thumbs.length === 0;
       const hide = (thumbs.length > 2) ? '-lg:hidden':'';
+
       thumbs.push(
         <div key={item.id} className={`flex-auto aspect-square overflow-hidden first:col-span-2 first:row-span-2 ${hide}`}>
-          <Thumbnail key={item.id} item={item} sizes={thumbs.length===0 ?
+          <Thumbnail key={item.id} item={item} first={first}
+                     sizes={first ?
             `(max-width: 985px) 66vw,
              (max-width: 1600px) 50vw
              756px`

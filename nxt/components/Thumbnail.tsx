@@ -4,10 +4,11 @@ import {absoluteUrl, formatTitle} from "@lib/utils";
 
 interface  ThumbnailProps{
   item:any,
-  sizes?:string
+  sizes?:string,
+  first?:boolean
 }
 
-export const Thumbnail = ({item, sizes}:ThumbnailProps) => {
+export const Thumbnail = ({item, sizes, first}:ThumbnailProps) => {
   const image = item.field_image[0] || item.field_image;
   const soldTag = item.field_sold ? "before:content-['sold'] before:absolute before:uppercase before:text-sm before:right-4 before:top-4 before:bg-pink-600 before:block before:px-2 before:text-white before:tracking-wide before:z-[1]" : "";
 
@@ -29,6 +30,7 @@ export const Thumbnail = ({item, sizes}:ThumbnailProps) => {
                (max-width: 1600px) 25vw
                366px`
             }
+            priority={first}
             alt={image.resourceIdObjMeta.alt}
           />
         </figure>
