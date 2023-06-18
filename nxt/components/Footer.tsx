@@ -4,7 +4,7 @@ import {animateScroll} from "react-scroll";
 
 export const Footer = () => {
   const {position} = useScrollPosition();
-
+  // test
   return (
     <footer className={`bg-slate-800 bottom-0  left-0 w-full pt-8 pb-4 text-white text-sm tracking-wider z-[1] transition-opacity
       ${position >= 100 ? "sticky" : "opacity-0"}
