@@ -3,7 +3,7 @@ import Link from "next/link";
 const MENU_LIST = [
   { text: "Home", href: "/" },
   { text: "Artworks", href: "/art" },
-  { text: "Contact", href: "#contact" },
+  { text: "Contact", href: "/#contact" },
 ];
 
 export const MenuLinks = ({className, classNameLink}) => {
